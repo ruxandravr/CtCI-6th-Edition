@@ -29,24 +29,6 @@ public class Deck <T extends Card> {
 		return cards.size() - dealtIndex;
 	}
 	
-	public T[] dealHand(int number) {
-		if (remainingCards() < number) {
-			return null;
-		}
-		
-		T[] hand = (T[]) new Card[number];
-		int count = 0;
-		while (count < number) {
-			T card = dealCard();
-			if (card != null) {
-				hand[count] = card;
-				count++;
-			}
-		}
-		
-		return hand;
-	}
-	
 	public T dealCard() {
 		if (remainingCards() == 0) {
 			return null;
